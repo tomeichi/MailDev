@@ -115,7 +115,9 @@ app.controller('NavCtrl', [
     }
 
     $scope.deleteAll = function () {
-      Email.delete({ id: 'all' })
+      if (window.confirm('All mails in your inbox will be deleted ?')) {
+        Email.delete({ id: 'all' })
+      }
     }
   }
 ])
